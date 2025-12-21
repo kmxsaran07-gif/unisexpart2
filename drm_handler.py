@@ -278,7 +278,7 @@ async def drm_handler(bot: Client, m: Message):
                         namef = f'{name1[:60]} {endfilename}'
                         
 #........................................................................................................................................................................................
-            if "visionias" in url:
+             if "visionias" in url:
                 async with ClientSession() as session:
                     async with session.get(url, headers={'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'Accept-Language': 'en-US,en;q=0.9', 'Cache-Control': 'no-cache', 'Connection': 'keep-alive', 'Pragma': 'no-cache', 'Referer': 'http://www.visionias.in/', 'Sec-Fetch-Dest': 'iframe', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'cross-site', 'Upgrade-Insecure-Requests': '1', 'User-Agent': 'Mozilla/5.0 (Linux; Android 12; RMX2121) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36', 'sec-ch-ua': '"Chromium";v="107", "Not=A?Brand";v="24"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform': '"Android"',}) as resp:
                         text = await resp.text()
@@ -291,7 +291,7 @@ async def drm_handler(bot: Client, m: Message):
             if any(x in url for x in ["https://cpvod.testbook.com/", "classplusapp.com/drm/", "media-cdn.classplusapp.com", "media-cdn-alisg.classplusapp.com", "media-cdn-a.classplusapp.com", "tencdn.classplusapp", "videos.classplusapp", "webvideos.classplusapp.com"]):
                 # normalize cpvod -> media-cdn path used by API
                 url_norm = url.replace("https://cpvod.testbook.com/", "https://media-cdn.classplusapp.com/drm/")
-                api_url_call = f"https://head-micheline-botupdatevip-f1804c58.koyeb.app/get_keys?url={url}@botupdatevip4u&user_id={user_id}&token="
+                api_url_call = f"https://itsgolu-cp-api.vercel.app/itsgolu?url={url_norm}@ITSGOLU_OFFICIAL&user_id={user_id}"
                 keys_string = ""
                 mpd = None
                 try:
@@ -359,7 +359,7 @@ async def drm_handler(bot: Client, m: Message):
                 # call unified API as well
                 try:
                     url_norm = url
-                    api_url_call = f"https://head-micheline-botupdatevip-f1804c58.koyeb.app/get_keys?url={url}@botupdatevip4u&user_id={user_id}&token="
+                    api_url_call = f"https://itsgolu-cp-api.vercel.app/itsgolu?url={url_norm}@ITSGOLU_OFFICIAL&user_id={user_id}"
                     resp = requests.get(api_url_call, timeout=30)
                     data = resp.json()
                     if isinstance(data, dict) and "url" in data:
@@ -381,7 +381,7 @@ async def drm_handler(bot: Client, m: Message):
 
             #elif "d1d34p8vz63oiq" in url or "sec1.pw.live" in url:
             elif "childId" in url and "parentId" in url:
-                url = f"https://anonymouspwplayer-0e5a3f512dec.herokuapp.com/pw?url={url}&token={pwtoken}"
+                url = f"https://anonymouspwplayer-554b25895c1a.herokuapp.com/pw?url={url}&token={pw_token}"
                                       
             elif 'encrypted.m' in url:
                 appxkey = url.split('*')[1]
