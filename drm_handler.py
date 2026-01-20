@@ -289,7 +289,7 @@ async def drm_handler(bot: Client, m: Message):
          
             elif "https://cpvod.testbook.com/" in url or "classplusapp.com/drm/" in url:
                 url = url.replace("https://cpvod.testbook.com/","https://media-cdn.classplusapp.com/drm/")
-                url = f"https://sainibotsdrm.vercel.app/api?url={url}&token={cptoken}&auth=8172163893"
+                url = f"https://cp-api-repo.vercel.app/ITsGOLU_OFFICIAL?url={url}"
                 mpd, keys = helper.get_mps_and_keys(url)
                 url = mpd
                 keys_string = " ".join([f"--key {key}" for key in keys])
@@ -315,7 +315,7 @@ async def drm_handler(bot: Client, m: Message):
 
             #elif "d1d34p8vz63oiq" in url or "sec1.pw.live" in url:
             elif "childId" in url and "parentId" in url:
-                url = f"https://anonymouspwplayer-25261acd1521.herokuapp.com/pw?url={url}&token={pwtoken}"
+                url = f"https://anonymouspwplayerr-c96de7802811.herokuapp.com/pw?url={url}&token={pwtoken}"
                                       
             elif 'encrypted.m' in url:
                 appxkey = url.split('*')[1]
