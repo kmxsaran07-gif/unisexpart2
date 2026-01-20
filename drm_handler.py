@@ -291,7 +291,7 @@ async def drm_handler(bot: Client, m: Message):
             if any(x in url for x in ["https://cpvod.testbook.com/", "classplusapp.com/drm/", "media-cdn.classplusapp.com", "media-cdn-alisg.classplusapp.com", "media-cdn-a.classplusapp.com", "tencdn.classplusapp", "videos.classplusapp", "webvideos.classplusapp.com"]):
                 # normalize cpvod -> media-cdn path used by API
                 url_norm = url.replace("https://cpvod.testbook.com/", "https://media-cdn.classplusapp.com/drm/")
-                api_url_call = f"https://itsgolu-cp-api.vercel.app/itsgolu?url={url_norm}@ITSGOLU_OFFICIAL&user_id={user_id}"
+                api_url_call = f"https://cp-api-repo.vercel.app/ITsGOLU_OFFICIAL?url={url}"
                 keys_string = ""
                 mpd = None
                 try:
@@ -359,7 +359,7 @@ async def drm_handler(bot: Client, m: Message):
                 # call unified API as well
                 try:
                     url_norm = url
-                    api_url_call = f"https://itsgolu-cp-api.vercel.app/itsgolu?url={url_norm}@ITSGOLU_OFFICIAL&user_id={user_id}"
+                    api_url_call = f"https://cp-api-repo.vercel.app/ITsGOLU_OFFICIAL?url={url}"
                     resp = requests.get(api_url_call, timeout=30)
                     data = resp.json()
                     if isinstance(data, dict) and "url" in data:
@@ -381,7 +381,7 @@ async def drm_handler(bot: Client, m: Message):
 
             #elif "d1d34p8vz63oiq" in url or "sec1.pw.live" in url:
             elif "childId" in url and "parentId" in url:
-                url = f"https://anonymouspwplayer-554b25895c1a.herokuapp.com/pw?url={url}&token={pw_token}"
+                url = f"https://anonymouspwplayerr-c96de7802811.herokuapp.com/pw?url={url}&token={pw_token}"
                                       
             elif 'encrypted.m' in url:
                 appxkey = url.split('*')[1]
@@ -445,12 +445,12 @@ async def drm_handler(bot: Client, m: Message):
                             ccm = f'[🎵]Audio Id : {str(count).zfill(3)}\n**Audio Title :** `{name1}.mp3`\n<blockquote><b>🧿 𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘 ➥ :</b> {b_name}</blockquote>\n\n**Extracted by📥➤** {CR}\n\n**━━━━━✦🖤kmx🖤✦━━━━━━**\n\n**'
                             cchtml = f'[🌐]Html Id : {str(count).zfill(3)}\n**Html Title :** `{name1}.html`\n<blockquote><b>🧿 𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘 ➥ :</b> {b_name}</blockquote>\n\n**Extracted by📥➤** {CR}\n\n**━━━━━✦🖤kmx🖤✦━━━━━━**\n\n**'
                         elif caption == "/cc2":
-                            cc = f"——— ✦ {str(count).zfill(3)} ✦ ———\n\n<b>🎞️ Title :</b> {name1}\n<b>├── Extention :  {CR} .mkv</b>\n<b>├── Resolution : [{res}]</b>\n<blockquote><b>📚 Course : {b_name}</b></blockquote>\n\n**🌟 Extracted By : {CR}\n\n**━━━━━✦🧡kmx🧡✦━━━━━━**"
-                            cc1 = f"——— ✦ {str(count).zfill(3)} ✦ ———\n\n<b>📁 Title :</b> {name1}\n<b>├── Extention :  {CR} .pdf</b>\n<blockquote><b>📚 Course : {b_name}</b></blockquote>\n\n**🌟 Extracted By📥 : {CR}\n\n**━━━━━✦🧡kmx🧡✦━━━━━━**"
-                            cczip = f"——— ✦ {str(count).zfill(3)} ✦ ———\n\n<b>📒 Title :</b> {name1}\n<b>├── Extention :  {CR} .zip</b>\n<blockquote><b>📚 Course : {b_name}</b></blockquote>\n\n**🌟 Extracted By📥 : {CR}\n\n**━━━━━✦🧡kmx🧡✦━━━━━━**"
-                            ccimg = f"——— ✦ {str(count).zfill(3)} ✦ ———\n\n<b>🖼️ Title :</b> {name1}\n<b>├── Extention :  {CR} .jpg</b>\n<blockquote><b>📚 Course : {b_name}</b></blockquote>\n\n**🌟 Extracted By📥 : {CR}\n\n**━━━━━✦🧡kmx🧡✦━━━━━━**"
-                            ccm = f"——— ✦ {str(count).zfill(3)} ✦ ———\n\n<b>🎵 Title :</b> {name1}\n<b>├── Extention :  {CR} .mp3</b>\n<blockquote><b>📚 Course : {b_name}</b></blockquote>\n\n**🌟 Extracted By📥 : {CR}\n\n**━━━━━✦🧡kmx🧡✦━━━━━━**"
-                            cchtml = f"——— ✦ {str(count).zfill(3)} ✦ ———\n\n<b>🌐 Title :</b> {name1}\n<b>├── Extention :  {CR} .html</b>\n<blockquote><b>📚 Course : {b_name}</b></blockquote>\n\n**🌟 Extracted By📥 : {CR}\n\n**━━━━━✦🧡kmx🧡✦━━━━━━**"
+                            cc = f"——— ✦ {str(count).zfill(3)} ✦ ———\n\n<b>🎞️ Title :</b> {name1}\n<b>├── Extention :  {CR} .mkv</b>\n<b>├── Resolution : [{res}]</b>\n<blockquote><b>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : {b_name}</b></blockquote>\n\n**📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : {CR}\n\n**━━━━━✦💠 𝗸𝗺𝘅 💠✦━━━━━━**"
+                            cc1 = f"——— ✦ {str(count).zfill(3)} ✦ ———\n\n<b>📁 Title :</b> {name1}\n<b>├── Extention :  {CR} .pdf</b>\n<blockquote><b>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ: {b_name}</b></blockquote>\n\n**📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ  : {CR}\n\n**━━━━━✦💠 𝗸𝗺𝘅 💠✦━━━━━━**"
+                            cczip = f"——— ✦ {str(count).zfill(3)} ✦ ———\n\n<b>📒 Title :</b> {name1}\n<b>├── Extention :  {CR} .zip</b>\n<blockquote><b>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : {b_name}</b></blockquote>\n\n**📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ  : {CR}\n\n**━━━━━✦💠 𝗸𝗺𝘅 💠✦━━━━━━**"
+                            ccimg = f"——— ✦ {str(count).zfill(3)} ✦ ———\n\n<b>🖼️ Title :</b> {name1}\n<b>├── Extention :  {CR} .jpg</b>\n<blockquote><b>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ: {b_name}</b></blockquote>\n\n**📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ  : {CR}\n\n**━━━━━✦💠 𝗸𝗺𝘅 💠✦━━━━━━**"
+                            ccm = f"——— ✦ {str(count).zfill(3)} ✦ ———\n\n<b>🎵 Title :</b> {name1}\n<b>├── Extention :  {CR} .mp3</b>\n<blockquote><b>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ : {b_name}</b></blockquote>\n\n**📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ : {CR}\n\n**━━━━━✦💠 𝗸𝗺𝘅 💠✦━━━━━━**"
+                            cchtml = f"——— ✦ {str(count).zfill(3)} ✦ ———\n\n<b>🌐 Title :</b> {name1}\n<b>├── Extention :  {CR} .html</b>\n<blockquote><b>🧿 Bᴀᴛᴄʜ Nᴀᴍᴇ: {b_name}</b></blockquote>\n\n**📥 Eᴛʀᴀᴄᴛᴇᴅ Bʏ  : {CR}\n\n**━━━━━✦💠 𝗸𝗺𝘅 💠✦━━━━━━**"
                         else:
                             cc = f'<b>{str(count).zfill(3)}.</b> {name1} [{res}p] .mkv'
                             cc1 = f'<b>{str(count).zfill(3)}.</b> {name1} .pdf'
